@@ -34,6 +34,7 @@
 ```bash
 git clone https://github.com/Josh99A/PearlTickets
 cd PearlTickets
+```
 
 ---
 
