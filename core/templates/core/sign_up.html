@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+ 
+<div class="auth-container">
+  <h3 class="auth-title text-center">Create an Account</h3>
+
+  <form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="fullName" class="form-label">User Name</label>
+      <input type="text" class="form-control" id="fullName" name="username" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phone_number" class="form-label">Phone number</label>
+      <input type="text" class="form-control" id="phone_number" name="phone_number" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+
+    <div class="d-grid gap-2 mb-3">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <button type="button" class="btn btn-google">
+        <i class="bi bi-google me-2"></i> Sign up with Google
+      </button>
+    </div>
+
+    <div class="form-text text-center">
+      Already have an account? <a href="{% url 'login' %}">Login</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Pearl Tickets</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f4f6f9;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .sidebar {
+      height: 100vh;
+      background-color: #003366;
+      color: white;
+      padding: 2rem 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 240px;
+      z-index: 1000;
+    }
+
+    .sidebar .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin: 1rem 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding-left: 10px;
+      transition: all 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #F9A825;
+    }
+
+    .main-content {
+      margin-left: 260px;
+      padding: 2rem;
+    }
+
+    .header {
+      background: linear-gradient(90deg, #003366, #005599);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      color: #003366;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-custom {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-4px);
+    }
+
+    .badge-status {
+      background-color: #F9A825;
+      color: white;
+      padding: 0.4em 0.8em;
+      font-size: 0.85rem;
+      border-radius: 8px;
+    }
+
+    .favorite-operator {
+      background-color: #fffbe6;
+      border-left: 5px solid #F9A825;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .btn-yellow {
+      background-color: #F9A825;
+      color: white;
+      font-weight: 500;
+      border-radius: 6px;
+    }
+
+    .btn-yellow:hover {
+      background-color: #e3a300;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        margin: 0;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar d-none d-md-block">
+    <a href="{% url 'index' %}">
+      <div class="logo">PearlTickets</div>
+
+    </a>
+    <a href="#active-trips"><i class="bi bi-play-circle"></i> Active Trips</a>
+    <a href="#active-trips"><i class="bi bi-play-circle"></i> Active Trips</a>
+    <a href="#past-trips"><i class="bi bi-clock-history"></i> Past Trips</a>
+    <a href="#recommendations"><i class="bi bi-star"></i> Recommendations</a>
+    <a href="#favorites"><i class="bi bi-heart"></i> Favourites</a>
+    <a href="#settings"><i class="bi bi-gear"></i> Settings</a>
+    <a href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i> Logout</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h3>👋 Welcome back, {{ user.username }}</h3>
+      <p>Here’s what’s happening with your trips</p>
+    </div>
+
+    <!-- Active Trips -->
+    <h5 id="active-trips" class="section-title">🟢 Active Trips</h5>
+    <div class="card-custom d-flex justify-content-between align-items-center flex-wrap">
+      <div>
+        <h6>Kampala → Mbarara</h6>
+        <p class="mb-0">🕒 May 17, 2025 — 8:00 AM</p>
+        <small class="text-muted">🚌 Global Coaches</small>
+      </div>
+      <span class="badge-status">Booked</span>
+    </div>
+
+    <!-- Past Trips -->
+    <h5 id="past-trips" class="section-title">📜 Past Trips</h5>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h6>Kampala → Jinja</h6>
+          <p>📅 Apr 12, 2025</p>
+          <p class="text-muted">🚌 YY Coaches</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card-custom">
+          <h6>Kampala → Gulu</h6>
+          <p>📅 Mar 22, 2025</p>
+          <p class="text-muted">🚌 Modern Express</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendations -->
+    <h5 id="recommendations" class="section-title">🌟 Recommended for You</h5>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card-custom">
+          <h6>Kampala → Fort Portal</h6>
+          <p>💰 UGX 30,000</p>
+          <button class="btn btn-yellow btn-sm">View Trips</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-custom">
+          <h6>Kampala → Mbale</h6>
+          <p>💰 UGX 20,000</p>
+          <button class="btn btn-yellow btn-sm">View Trips</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-custom">
+          <h6>Kampala → Kabale</h6>
+          <p>💰 UGX 32,000</p>
+          <button class="btn btn-yellow btn-sm">View Trips</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Favourite Operators -->
+    <h5 id="favorites" class="section-title">❤️ Favourite Operators</h5>
+    <div>
+      <div class="favorite-operator">🚍 Global Coaches</div>
+      <div class="favorite-operator">🚌 YY Coaches</div>
+      <div class="favorite-operator">🚐 Modern Express</div>
+    </div>
+
+    <!-- Settings -->
+    <h5 id="settings" class="section-title">⚙️ Settings</h5>
+    <div class="card-custom">
+      <p><strong>Email:</strong> alex@example.com</p>
+      <p><strong>Language:</strong> English</p>
+      <p><strong>Notifications:</strong> Enabled</p>
+      <button class="btn btn-yellow btn-sm">Edit Settings</button>
+    </div>
+  </div>
+
+</body>
+</html>

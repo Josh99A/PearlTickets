@@ -1,0 +1,102 @@
+{% extends 'core/base.html' %}
+
+  {% block content %}
+  <style>
+   
+    .header {
+      background-color: #003366;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    .operator-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .operator-name {
+      font-size: 1.4rem;
+      color: #003366;
+      font-weight: 600;
+    }
+    .price-tag {
+      background-color: #F9A825;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .route-line {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 8px 0;
+    }
+    .route-line:last-child {
+      border-bottom: none;
+    }
+  </style>
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Bus Operators Found</h2>
+    <p>View routes and prices from your search results</p>
+  </div>
+
+  <!-- Content -->
+  <div class="container mt-4 mb-5">
+    
+    <!-- Operator 1 -->
+    <div class="operator-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="operator-name">Global Coaches</div>
+        <img src="bus-logo1.png" alt="Global Coaches" width="60">
+      </div>
+      <div class="route-line d-flex justify-content-between">
+        <div>🚌 Kampala → Mbarara</div>
+        <div class="price-tag">UGX 25,000</div>
+      </div>
+      <div class="route-line d-flex justify-content-between">
+        <div>🚌 Kampala → Kabale</div>
+        <div class="price-tag">UGX 35,000</div>
+      </div>
+    </div>
+
+    <!-- Operator 2 -->
+    <div class="operator-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="operator-name">Modern Express</div>
+        <img src="bus-logo2.png" alt="Modern Express" width="60">
+      </div>
+      <div class="route-line d-flex justify-content-between">
+        <div>🚌 Kampala → Gulu</div>
+        <div class="price-tag">UGX 30,000</div>
+      </div>
+      <div class="route-line d-flex justify-content-between">
+        <div>🚌 Kampala → Arua</div>
+        <div class="price-tag">UGX 40,000</div>
+      </div>
+    </div>
+
+    <!-- Operator 3 -->
+    <div class="operator-card">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="operator-name">YY Coaches</div>
+        <img src="bus-logo3.png" alt="YY Coaches" width="60">
+      </div>
+      <div class="route-line d-flex justify-content-between">
+        <div>🚌 Kampala → Mbale</div>
+        <div class="price-tag">UGX 20,000</div>
+      </div>
+      <div class="route-line d-flex justify-content-between">
+        <div>🚌 Kampala → Soroti</div>
+        <div class="price-tag">UGX 28,000</div>
+      </div>
+    </div>
+
+  </div>
+
+
+{% endblock %}
+
+

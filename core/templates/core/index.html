@@ -1,0 +1,118 @@
+{% extends 'core/base.html' %}
+{%  load static %}
+
+{% block content %}
+<!-- Hero Section -->
+  <section class="hero">
+
+    <div class="container">
+      <h1>Smart, Simple and Swift Bus Tickets in Uganda</h1>
+      <p>Book your next bus trip in seconds - Anytime, Anywhere</p>
+    </div>
+   <div class="hero-search-bar">
+  <form class="search-form">
+    <input type="text" placeholder="From" name="from" required>
+    <input type="text" placeholder="To" name="to" required>
+    <input type="date" name="date" required>
+    <input type="text" placeholder="Bus Operator" name="bus_operator">
+    <button type="submit">Find My Adventure</button>
+  </form>
+</div>
+
+    
+  </section>
+
+  <!-- Popular Routes -->
+  <section class="py-5">
+    <div class="container">
+      <h3 class="mb-4">Popular Routes</h3>
+      <div class="row">
+        <div class="col-md-4">Kampala ↔️ Mbarara</div>
+        <div class="col-md-4">2hrs</div>
+        <div class="col-md-4">USD 12.00 <button class="btn btn-primary btn-sm ms-3">Book</button></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">Kampala ↔️ Gulu</div>
+        <div class="col-md-4">6hrs</div>
+        <div class="col-md-4">USD 20.00 <button class="btn btn-primary btn-sm ms-3">Book</button></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4">Kampala ↔️ Fort Portal</div>
+        <div class="col-md-4">5hrs</div>
+        <div class="col-md-4">USD 18.00 <button class="btn btn-primary btn-sm ms-3">Book</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="why-section">
+
+    <div class="container d-md-flex justify-content-between align-items-center">
+      <div>
+        <h4>Why Choose Pearl Tickets?</h4>
+        <ul>
+          <li>Convenient trip experience</li>
+          <li>Reliable and secure</li>
+          <li>Affordable prices</li>
+        </ul>
+      </div>
+      <div class="text-center mt-3 mt-md-0">
+        <p>Download the Pearl Tickets App</p>
+        <img  id="app-logo" src="{% static 'core/images/AppLogo.png' %}" alt="App Store">
+        <div class="QR-google">
+            <img src="{% static 'core/images/googleplay_icon.svg' %}" alt="Google Play">
+            <br>
+            <img src="{% static 'core/images/QR_download.svg' %}" alt="QR Code">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Jinja Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h3>Explore the Source of the Nile</h3>
+      <p>Discover the magic of East Africa's greatest river. From boat rides to historical sites, the experience is one of a kind.</p>
+      <a href="#" class="btn btn-outline-primary">Book a Trip to Jinja</a>
+    </div>
+  </section>
+
+  <!-- Tourist Attractions -->
+  <section class="py-5">
+    <div class="container">
+      <h3 class="mb-4">Popular Tourist attractions</h3>
+      <div class="row tourist-attractions">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="{% static 'core/images/Murchison_Falls.webp' %}" class="card-img-top" alt="Murchison Falls">
+            <div class="card-body">
+              <h5 class="card-title">Murchison Falls National Park</h5>
+              <p class="card-text">Experience the most powerful waterfall on the Nile.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="{% static 'core/images/Mt_Rwenzori.jpeg' %}" class="card-img-top" alt="Rwenzori">
+            <div class="card-body">
+              <h5 class="card-title">Rwenzori Mountains</h5>
+              <p class="card-text">Explore Uganda's snow-capped mountain range.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="{% static 'core/images/Lake_Bunyoni.jpeg' %}" class="card-img-top" alt="Lake Bunyonyi">
+            <div class="card-body">
+              <h5 class="card-title">Lake Bunyonyi</h5>
+              <p class="card-text">Relax by Uganda’s most scenic lake.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
