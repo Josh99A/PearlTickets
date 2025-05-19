@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-# User model (extend default Django user)
+
 class User(AbstractUser):
     phone_number = models.CharField(max_length=15, unique=True)
     is_passenger = models.BooleanField(default=True)
